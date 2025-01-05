@@ -1,0 +1,5 @@
+./node_modules/.bin/esbuild src/build-poems.js --loader:.js=jsx --bundle --outfile=build/build-poems.js --platform=node --target=node21.0
+node build/build-poems.js
+./node_modules/.bin/esbuild src/main.js --loader:.js=jsx --bundle --outfile=build/index.js --platform=node --target=node21.0
+./node_modules/.bin/esbuild src/index.js --loader:.js=jsx --bundle --minify --sourcemap --outfile=public/index.js
+./node_modules/.bin/sass src/style.scss public/style.css

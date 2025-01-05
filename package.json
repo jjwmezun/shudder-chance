@@ -4,8 +4,7 @@
   "description": "When you're ready, start your application by running: `docker compose up --build`.",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c -w",
+    "build": "./.build",
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,19 +20,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.26.3",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-replace": "^6.0.2",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "cssnano": "^7.0.6",
-    "postcss": "^8.4.49",
-    "rollup": "^4.29.1",
-    "rollup-plugin-polyfill-node": "^0.13.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-scss": "^4.0.1",
+    "esbuild": "0.24.2",
+    "fast-xml-parser": "^4.5.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.0.0",
     "sass": "^1.83.1"
   }
 }

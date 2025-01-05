@@ -1,18 +1,24 @@
 const React = require('react');
-const { render } = require('./build/index.js');
+const { renderHome, renderPoem } = require('./build/index.js');
 const express = require( 'express' );
 const fs = require( 'fs' );
 
 const app = express();
 const port = 3000;
 
+const poems = JSON.parse( fs.readFileSync( `build/poems.json`, `utf-8` ) );
+
 app.get( '/', ( req, res ) => {
-    res.send( render( `¡BAM! ¡LOOK @ THAT BACON SIZZLE!`) );
+    res.send( renderHome( `¡BAM! ¡LOOK @ THAT BACON SIZZLE!`) );
 } );
 
 app.get( `/poem/:id`, ( req, res ) => {
     const poemId = req.params.id;
-    res.send( render( `Poem #${ poemId }` ) );
+    if ( !poems[ poemId ] ) {
+        res.status( 404 ).send( `Poem not found` );
+        return;
+    }
+    res.send( renderPoem( poems[ poemId ] ) );
 } );
 
 app.use( express.static( 'public' ) );
