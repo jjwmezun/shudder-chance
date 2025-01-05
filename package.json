@@ -1,0 +1,27 @@
+{
+  "name": "shudder-chance",
+  "version": "0.1.0",
+  "description": "When you're ready, start your application by running: `docker compose up --build`.",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "server": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ".git"
+  },
+  "author": "J. J. W. Mezun",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}
