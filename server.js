@@ -1,5 +1,5 @@
 const React = require('react');
-const { renderHome, renderPoem } = require('./build/index.js');
+const { renderArchive, renderHome, renderPoem } = require('./build/index.js');
 const express = require( 'express' );
 const fs = require( 'fs' );
 
@@ -10,6 +10,10 @@ const poems = JSON.parse( fs.readFileSync( `build/poems.json`, `utf-8` ) );
 
 app.get( '/', ( req, res ) => {
     res.send( renderHome( `¡BAM! ¡LOOK @ THAT BACON SIZZLE!`) );
+} );
+
+app.get( `/poems`, ( req, res ) => {
+    res.send( renderArchive( Object.values( poems ) ) );
 } );
 
 app.get( `/poem/:id`, ( req, res ) => {

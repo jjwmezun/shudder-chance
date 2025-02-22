@@ -21,3 +21,18 @@ export function renderPoem( poem ) {
 		</App>
 	) }`;
 };
+
+export function renderArchive( poems ) {
+	return `<!DOCTYPE html>${ Server.renderToString(
+		<App>
+			<h1>Poems</h1>
+			<ul>
+				{ poems.map( ( poem, i ) => (
+					<li key={ i }>
+						<a href={ `/poem/${ poem.slug }` }>{ poem.title }</a>
+					</li>
+				) ) }
+			</ul>
+		</App>
+	) }`;
+};
